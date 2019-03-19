@@ -1,3 +1,5 @@
+#websequencediagrams.com kaavio fullstack-2019 tehtävä 0.4: uusi muistiinpano
+
 käyttäjä->selain:
 note left of selain
 käyttäjä kirjoittaa tekstikenttään muistiinpanon ja painaa talleta
