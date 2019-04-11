@@ -1,32 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const course =
-{
-  name: 'Half Stack -sovelluskehitys',
-  parts: [
-    {
-      name: 'Reactin perusteet',
-      exercises: 10,
-      id: 1
-    },
-    {
-      name: 'Tiedonvälitys propseilla',
-      exercises: 7,
-      id: 2
-    },
-    {
-      name: 'Komponenttien tila',
-      exercises: 14,
-      id: 3
-    },
-    {
-      name: 'Redux',
-      exercises: 7,
-      id: 7
-    }
-  ]
-}
+
 
 const Header = ({name}) => <h1>{name}</h1>
 
@@ -38,7 +13,7 @@ const Part = ({ name, exercises }) => {
 }
 const Total = ({total}) => <p>Yhteensä {total} tehtävää</p>
 
-const Content = () => {
+const Course = ({course}) => {
 
   const parts = course.parts;
     const rows = () => parts.map(part => (
@@ -59,14 +34,41 @@ const Content = () => {
 }
 
 const App = () => {
+  const course =
+  {
+    name: 'Half Stack -sovelluskehitys',
+    parts: [
+      {
+        name: 'Reactin perusteet',
+        exercises: 10,
+        id: 1
+      },
+      {
+        name: 'Tiedonvälitys propseilla',
+        exercises: 7,
+        id: 2
+      },
+      {
+        name: 'Komponenttien tila',
+        exercises: 14,
+        id: 3
+      },
+      {
+        name: 'Redux',
+        exercises: 7,
+        id: 7
+      }
+    ]
+  }
+
   return (
     <div>
-    <Content />
+    <Course course={course}/>
     </div>
   )
 }
 
 ReactDOM.render(
-  <App notes={course} />,
+  <App />,
   document.getElementById('root')
 )
